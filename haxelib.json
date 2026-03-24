@@ -1,0 +1,11 @@
+{
+  "name": "flight",
+  "url": "https://github.com/openfl/flight",
+  "license": "MIT",
+  "tags": ["extern", "typescript"],
+  "description": "Haxe externs for flighthq/flight",
+  "version": "0.1.0",
+  "classPath": "src",
+  "releasenote": "Initial release",
+  "contributors": ["singmajesty"]
+}

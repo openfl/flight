@@ -1,0 +1,11 @@
+<project>
+  <meta title="Displaying a Bitmap" package="openfl.flight.displayingabitmap" version="1.0.0" />
+
+  <app main="Main" path="bin" />
+
+  <include path="../../include.xml" />
+
+  <source path="src" />
+
+  <assets path="public/assets" />
+</project>

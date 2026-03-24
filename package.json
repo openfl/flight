@@ -1,0 +1,18 @@
+{
+  "name": "openfl-flight",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*",
+    "!packages/upstream"
+  ],
+  "scripts": {
+    "assets": "npm run assets:displayingabitmap",
+    "assets:displayingabitmap": "cd examples/displayingabitmap && tsx ../../packages/upstream/scripts/download-assets.ts",
+    "sync": "git submodule update --remote --merge",
+    "generate": "node packages/ts-processing/generate.js"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  }
+}
