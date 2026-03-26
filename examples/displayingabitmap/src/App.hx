@@ -9,6 +9,7 @@ class App {
     private var renderer: CanvasRenderer;
 
     public function new() {
+        // TODO: Move to ApplicationMain?
         var canvas = cast(Browser.document.createElement('canvas'), CanvasElement);
         canvas.width = 550;
         canvas.height = 400;
@@ -21,6 +22,7 @@ class App {
             },
         };
 
+        // TODO: Why is background black?
         trace(StringTools.hex(options.backgroundColor, 8));
 
         renderer = new CanvasRenderer(canvas, options);
