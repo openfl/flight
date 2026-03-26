@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
 import path from 'path';
-import openflPlugin from "vite-plugin-openfl";
+import limePlugin from "../../scripts/vite-plugin-lime";
 
 export default defineConfig({
-  plugins: [openflPlugin()],
+  plugins: [limePlugin()],
   resolve: {
     alias: {
       '@flighthq/flight': path.resolve(__dirname, '../../packages/upstream/packages/api/flight')
