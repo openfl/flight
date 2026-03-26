@@ -1,3 +1,4 @@
+import flight.geometry.Rectangle;
 import flight.scene.graph.display.MovieClip;
 // import flight.scene.graph.display.Bitmap;
 // import flight.assets.ImageSource;
@@ -8,6 +9,9 @@ class Main extends MovieClip {
   public function new() {
     super();
     trace("Hello World");
+    var rect = new Rectangle();
+    rect.x = 100;
+    trace(rect);
     // this.initialize();
   }
 

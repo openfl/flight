@@ -9,10 +9,13 @@
   "scripts": {
     "assets": "npm run assets:displayingabitmap",
     "assets:displayingabitmap": "cd examples/displayingabitmap && tsx ../../packages/upstream/scripts/download-assets.ts",
+    "build": "cd packages/upstream && npm run build",
     "sync": "git submodule update --remote --merge",
     "generate": "node packages/ts-processing/generate.js"
   },
   "devDependencies": {
-    "tsx": "^4.21.0"
+    "tsx": "^4.21.0",
+    "vite": "^8.0.2",
+    "vite-plugin-openfl": "^2.0.3"
   }
 }

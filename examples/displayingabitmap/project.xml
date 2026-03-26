@@ -3,9 +3,12 @@
 
   <app main="Main" path="bin" />
 
+  <!-- <haxelib name="genes" /> -->
   <include path="../../include.xml" />
 
+<!-- <templatePath name="../../templates" /> -->
   <source path="src" />
 
   <assets path="public/assets" />
+  <define name="foo" />
 </project>

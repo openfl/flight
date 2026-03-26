@@ -1,7 +1,6 @@
 package flight.scene.graph.display;
 
-class MovieClip {
-    function new() {
-        
-    }
+@:js.import("@flighthq/flight", "MovieClip")
+extern class MovieClip {
+    function new();
 }

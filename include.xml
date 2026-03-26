@@ -5,5 +5,6 @@
 	<source path="src" />
 
 	<templatePath name="templates" />
+	<haxeflag name="--macro" value="jsImport.Macro.init()" />
 
 </extension>

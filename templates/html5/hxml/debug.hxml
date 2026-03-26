@@ -3,4 +3,8 @@
 -cp ::OUTPUT_DIR::/haxe
 -D html5
 -D html
+-D js-es=6
+-D js-module=es
+-D js-classic=0
+-D js-esm
 -debug
