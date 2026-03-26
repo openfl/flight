@@ -22,9 +22,6 @@ class App {
             },
         };
 
-        // TODO: Why is background black?
-        trace(StringTools.hex(options.backgroundColor, 8));
-
         renderer = new CanvasRenderer(canvas, options);
         main = new Main();
         enterFrame();
