@@ -7,5 +7,8 @@
 
   <source path="src" />
 
-  <assets path="public/assets" />
+  <!-- <assets path="public/assets" /> -->
+
+  <postbuild command="npm run build" unless="vite-plugin || dev" />
+  <postbuild command="npm run dev" if="dev" unless="vite-plugin" />
 </project>

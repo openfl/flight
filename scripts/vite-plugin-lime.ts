@@ -103,6 +103,7 @@ export default function limePlugin(): Plugin {
         "build",
         id,
         "html5",
+        "-Dvite-plugin",
         mode,
         // `--template=${templateDir}`,
       ]);
@@ -164,6 +165,7 @@ function getJSOutputPath(id: string) {
     "display",
     id,
     "html5",
+    "-Dvite-plugin",
     "--output-file"
   ]);
   if (result.status !== 0) {

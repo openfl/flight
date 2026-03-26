@@ -8,5 +8,8 @@ export default defineConfig({
     alias: {
       '@flighthq/flight': path.resolve(__dirname, '../../packages/upstream/packages/api/flight')
     }
+  },
+  build: {
+    outDir: "bin/html5/bin"
   }
 });
