@@ -1,37 +1,32 @@
-import flight.geometry.Rectangle;
-import flight.scene.graph.display.MovieClip;
-// import flight.scene.graph.display.Bitmap;
-// import flight.assets.ImageSource;
+import flight.assets.ImageSource;
+import flight.display.Bitmap;
+import flight.display.MovieClip;
+import js.html.Image;
+import js.lib.Error;
+import js.lib.Promise;
 
 class Main extends MovieClip {
-  // private var bitmap: Bitmap = new Bitmap();
+  private var bitmap:Bitmap;
 
   public function new() {
     super();
-    trace("Hello World");
-    var rect = new Rectangle();
-    rect.x = 100;
-    trace(rect);
-    // this.initialize();
+    loadImageAndDecode('assets/wabbit_alpha.png').then(initialize);
   }
 
-  // private async initialize() {
-  //   try {
-  //     this.bitmap.image = new ImageSource(await loadImageAndDecode('assets/wabbit_alpha.png'));
-  //     this.bitmap.x = (550 - this.bitmap.width) / 2;
-  //     this.bitmap.y = (400 - this.bitmap.height) / 2;
-  //     this.addChild(this.bitmap);
-  //   } catch (error) {
-  //     console.error('Error loading image:', error); // eslint-disable-line
-  //   }
-  // }
-}
+  private function initialize(img: Image) {
+    bitmap = new Bitmap();
+    bitmap.image = new ImageSource(img);
+    bitmap.x = (550 - bitmap.width) / 2;
+    bitmap.y = (400 - bitmap.height) / 2;
+    addChild(this.bitmap);
+  }
 
-// function loadImageAndDecode(src: string): Promise<HTMLImageElement> {
-//   return new Promise((resolve, reject) => {
-//     const img = new Image();
-//     img.onload = () => resolve(img);
-//     img.onerror = () => reject(new Error('Failed to load image'));
-//     img.src = src;
-//   });
-// }
+  private function loadImageAndDecode(src: String): Promise<Image> {
+    return new Promise((resolve, reject) -> {
+      var img = new Image();
+      img.onload = () -> resolve(img);
+      img.onerror = () -> reject(new Error('Failed to load image'));
+      img.src = src;
+    });
+  }
+}

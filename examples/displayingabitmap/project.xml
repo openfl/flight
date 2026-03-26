@@ -1,14 +1,11 @@
 <project>
   <meta title="Displaying a Bitmap" package="openfl.flight.displayingabitmap" version="1.0.0" />
 
-  <app main="Main" path="bin" />
+  <app main="App" path="bin" />
 
-  <!-- <haxelib name="genes" /> -->
   <include path="../../include.xml" />
 
-<!-- <templatePath name="../../templates" /> -->
   <source path="src" />
 
   <assets path="public/assets" />
-  <define name="foo" />
 </project>

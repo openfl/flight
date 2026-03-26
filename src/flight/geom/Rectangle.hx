@@ -1,4 +1,4 @@
-package flight.geometry;
+package flight.geom;
 
 @:js.import("@flighthq/flight", "Rectangle")
 extern class Rectangle {

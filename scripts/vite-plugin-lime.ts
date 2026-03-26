@@ -15,12 +15,7 @@ export default function limePlugin(): Plugin {
     },
     config() {
       const projectXmlPath = path.resolve(process.cwd(), "project.xml");
-      const hxml = getHXML(projectXmlPath);
-      if (!hxml) {
-        throw new Error("Command `lime display html5` failed.");
-        return;
-      }
-      const jsOutputPath = getJSOutputPath(hxml);
+      const jsOutputPath = getJSOutputPath(projectXmlPath);
       if (!jsOutputPath) {
         throw new Error("Failed to detect OpenFL html5 output file path.");
         return;
@@ -52,12 +47,7 @@ export default function limePlugin(): Plugin {
       }
       const sep = matched[1];
 
-      const hxml = getHXML(importer);
-      if (!hxml) {
-        throw new Error("Command `lime display html5` failed.");
-        return;
-      }
-      const jsOutputPath = getJSOutputPath(hxml);
+      const jsOutputPath = getJSOutputPath(importer);
       if (!jsOutputPath) {
         throw new Error("Failed to detect OpenFL html5 output file path.");
         return;
@@ -127,12 +117,7 @@ export default function limePlugin(): Plugin {
         this.error("OpenFL Build Failed with status code: " + result.status);
         return;
       }
-      const hxml = getHXML(id);
-      if (!hxml) {
-        throw new Error("Command `lime display html5` failed.");
-        return;
-      }
-      const jsOutputPath = getJSOutputPath(hxml);
+      const jsOutputPath = getJSOutputPath(id);
       if (!jsOutputPath) {
         throw new Error("Failed to detect OpenFL html5 output file path.");
         return;
@@ -172,25 +157,18 @@ function getHaxelibs(projectXML: string) {
   return haxelibs;
 }
 
-function getHXML(id: string) {
+function getJSOutputPath(id: string) {
   const result = child_process.spawnSync("haxelib", [
     "run",
     "lime",
     "display",
     id,
     "html5",
+    "--output-file"
   ]);
   if (result.status !== 0) {
-    console.error(result.output.toString());
+    console.error(result.stdout.toString().trim());
     return null;
   }
-  return result.output.toString();
-}
-
-function getJSOutputPath(hxml: string) {
-  const jsArg = /\-js (.+)/.exec(hxml);
-  if (!jsArg) {
-    return null;
-  }
-  return jsArg[1];
+  return result.stdout.toString().trim();
 }
