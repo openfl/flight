@@ -3,7 +3,8 @@ package flight.geom;
 import js.lib.Float32Array;
 
 @:js.import("@flighthq/flight", "Vector2")
-extern class Vector2 {
+extern class Vector2
+{
 	var length:Float;
 	var lengthSquared:Float;
 	var x:Float;

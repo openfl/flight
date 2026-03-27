@@ -1,7 +1,8 @@
 package flight.geom;
 
 @:js.import("@flighthq/flight", "Vector4")
-extern class Vector4 {
+extern class Vector4
+{
 	static var W_UNIT(default, never):Vector4;
 	static var X_AXIS(default, never):Vector4;
 	static var Y_AXIS(default, never):Vector4;

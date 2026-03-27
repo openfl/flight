@@ -3,7 +3,8 @@ package flight.geom;
 import js.lib.Float32Array;
 
 @:js.import("@flighthq/flight", "Matrix")
-extern class Matrix {
+extern class Matrix
+{
 	var a:Float;
 	var b:Float;
 	var c:Float;

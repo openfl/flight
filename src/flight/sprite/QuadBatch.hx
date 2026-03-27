@@ -7,7 +7,8 @@ import js.lib.Float32Array;
 import js.lib.Uint16Array;
 
 @:js.import("@flighthq/flight", "QuadBatch")
-extern class QuadBatch extends SpriteNode {
+extern class QuadBatch extends SpriteNode
+{
 	var atlas:TextureAtlas;
 	var ids:Uint16Array;
 	var instanceCount:UInt;

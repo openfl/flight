@@ -3,7 +3,8 @@ package flight.geom;
 import js.lib.Float32Array;
 
 @:js.import("@flighthq/flight", "Matrix3")
-extern class Matrix3 {
+extern class Matrix3
+{
 	var m(default, never):Float32Array;
 	var isAffine(default, never):Bool;
 	function new(?m00:Float, ?m01:Float, ?m02:Float, ?m10:Float, ?m11:Float, ?m12:Float, ?m20:Float, ?m21:Float, ?m22:Float);

@@ -1,6 +1,7 @@
 package flight.materials;
 
-enum abstract BlendMode(Int) from Int {
+enum abstract BlendMode(Int) from Int
+{
 	var ADD;
 	var ALPHA;
 	var DARKEN;

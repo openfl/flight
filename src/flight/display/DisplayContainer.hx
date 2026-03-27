@@ -1,7 +1,8 @@
 package flight.display;
 
 @:js.import("@flighthq/flight", "DisplayContainer")
-extern class DisplayContainer extends DisplayObject {
+extern class DisplayContainer extends DisplayObject
+{
 	var numChildren(default, never):UInt;
 	function new();
 	function addChild(child:DisplayObject):DisplayObject;

@@ -14,7 +14,8 @@ import js.lib.Error;
 import js.lib.Promise;
 import js.Browser;
 
-class App {
+class App
+{
 	var canvas:CanvasElement;
 	var element:DivElement;
 	var quadBatch:QuadBatch;
@@ -30,13 +31,16 @@ class App {
 	var maxX:Float;
 	var maxY:Float;
 
-	public function new() {
-		loadImageAndDecode('assets/wabbit_alpha.png').then((image:Image) -> {
+	public function new()
+	{
+		loadImageAndDecode('assets/wabbit_alpha.png').then((image:Image) ->
+		{
 			initialize(new ImageSource(image));
 		});
 	}
 
-	private function initialize(bunny:ImageSource):Void {
+	private function initialize(bunny:ImageSource):Void
+	{
 		initElements();
 		// initStats();
 		initQuadBatch(bunny);
@@ -50,38 +54,48 @@ class App {
 		start();
 	}
 
-	private function addBunny():Void {
+	private function addBunny():Void
+	{
 		quadBatch.resize(quadBatch.instanceCount + 1);
 		bunnyPosition.push(new Vector2());
 		bunnySpeed.push(new Vector2(Math.random() * 5, Math.random() * 5 - 2.5));
 	}
 
-	private function enterFrame(?_):Void {
+	private function enterFrame(?_):Void
+	{
 		// stats.begin();
 		var instanceCount = quadBatch.instanceCount;
 
-		for (i in 0...instanceCount) {
+		for (i in 0...instanceCount)
+		{
 			var position = bunnyPosition[i];
 			var speed = bunnySpeed[i];
 			position.x += speed.x;
 			position.y += speed.y;
 			speed.y += gravity;
 
-			if (position.x > maxX) {
+			if (position.x > maxX)
+			{
 				speed.x *= -1;
 				position.x = maxX;
-			} else if (position.x < minX) {
+			}
+			else if (position.x < minX)
+			{
 				speed.x *= -1;
 				position.x = minX;
 			}
 
-			if (position.y > maxY) {
+			if (position.y > maxY)
+			{
 				speed.y *= -0.8;
 				position.y = maxY;
-				if (Math.random() > 0.5) {
+				if (Math.random() > 0.5)
+				{
 					speed.y -= 3 + Math.random() * 4;
 				}
-			} else if (position.y < minY) {
+			}
+			else if (position.y < minY)
+			{
 				speed.y = 0;
 				position.y = minY;
 			}
@@ -89,8 +103,10 @@ class App {
 			quadBatch.writeVector(i, position);
 		}
 
-		if (addingBunnies) {
-			for (i in 0...100) {
+		if (addingBunnies)
+		{
+			for (i in 0...100)
+			{
 				addBunny();
 			}
 		}
@@ -100,7 +116,8 @@ class App {
 		Browser.window.requestAnimationFrame(enterFrame);
 	};
 
-	private function initElements():Void {
+	private function initElements():Void
+	{
 		element = cast(Browser.document.createElement('div'), DivElement);
 		canvas = cast(Browser.document.createElement('canvas'), CanvasElement);
 
@@ -112,7 +129,8 @@ class App {
 		Browser.document.body.appendChild(element);
 	}
 
-	private function initQuadBatch(bunny:ImageSource):Void {
+	private function initQuadBatch(bunny:ImageSource):Void
+	{
 		var atlas = new TextureAtlas(bunny);
 		atlas.addRegion(new TextureAtlasRegion(0, 0, bunny.width, bunny.height));
 		quadBatch = new QuadBatch();
@@ -120,7 +138,8 @@ class App {
 		quadBatch.transformType = QuadTransformType.VECTOR;
 	}
 
-	private function initRenderer():Void {
+	private function initRenderer():Void
+	{
 		var options = {
 			backgroundColor: 0xeeddccff,
 			contextAttributes: {
@@ -140,8 +159,10 @@ class App {
 	//     Browser.document.body.appendChild(dom);
 	//   }
 
-	private function loadImageAndDecode(src:String):Promise<Image> {
-		return new Promise((resolve, reject) -> {
+	private function loadImageAndDecode(src:String):Promise<Image>
+	{
+		return new Promise((resolve, reject) ->
+		{
 			var img = new Image();
 			img.onload = () -> resolve(img);
 			img.onerror = () -> reject(new Error('Failed to load image'));
@@ -149,17 +170,21 @@ class App {
 		});
 	}
 
-	private function onMouseDown():Void {
+	private function onMouseDown():Void
+	{
 		addingBunnies = true;
 	}
 
-	private function onMouseUp():Void {
+	private function onMouseUp():Void
+	{
 		addingBunnies = false;
 		trace(this.bunnyPosition.length + ' bunnies');
 	}
 
-	private function start():Void {
-		for (i in 0...10) {
+	private function start():Void
+	{
+		for (i in 0...10)
+		{
 			addBunny();
 		}
 

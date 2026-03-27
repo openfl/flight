@@ -5,7 +5,8 @@ import flight.materials.ColorTransform;
 import flight.materials.Shader;
 
 @:js.import("@flighthq/flight", "SpriteNode")
-extern class SpriteNode {
+extern class SpriteNode
+{
 	var alpha:Float;
 	var alphaEnabled:Bool;
 	var blendMode:Null<BlendMode>;

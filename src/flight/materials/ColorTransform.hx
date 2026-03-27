@@ -1,7 +1,8 @@
 package flight.materials;
 
 @:js.import("@flighthq/flight", "ColorTransform")
-extern class ColorTransform {
+extern class ColorTransform
+{
 	var redMultiplier:Float;
 	var greenMultiplier:Float;
 	var blueMultiplier:Float;

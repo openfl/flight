@@ -8,7 +8,8 @@ import flight.materials.Filter;
 import flight.materials.Shader;
 
 @:js.import("@flighthq/flight", "DisplayObject")
-extern class DisplayObject {
+extern class DisplayObject
+{
 	var alpha:Float;
 	var blendMode:BlendMode;
 	var cacheAsBitmap:Bool;

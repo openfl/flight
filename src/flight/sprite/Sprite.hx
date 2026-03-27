@@ -1,7 +1,8 @@
 package flight.sprite;
 
 @:js.import("@flighthq/flight", "Sprite")
-extern class Sprite extends SpriteNode {
+extern class Sprite extends SpriteNode
+{
 	var id:UInt;
 	var numChildren(default, never):UInt;
 	function new();

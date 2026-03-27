@@ -4,7 +4,8 @@ import flight.geom.Matrix;
 
 // import js.html.CanvasRenderingContext2DSettings;
 // import js.html.ImageSmoothingQuality;
-typedef CanvasRenderOptions = {
+typedef CanvasRenderOptions =
+{
 	var ?backgroundColor:Null<UInt>;
 	var ?contextAttributes:Dynamic /*CanvasRenderingContext2DSettings*/;
 	var ?imageSmoothingEnabled:Bool;

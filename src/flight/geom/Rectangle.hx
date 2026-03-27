@@ -1,7 +1,8 @@
 package flight.geom;
 
 @:js.import("@flighthq/flight", "Rectangle")
-extern class Rectangle {
+extern class Rectangle
+{
 	var bottom:Float;
 	var bottomRight:Vector2;
 	var height:Float;
