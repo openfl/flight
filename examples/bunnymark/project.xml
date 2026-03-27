@@ -1,0 +1,14 @@
+<project>
+  <meta title="Displaying a Bitmap" package="openfl.flight.displayingabitmap" version="1.0.0" />
+
+  <app main="App" path="bin" />
+
+  <include path="../../include.xml" />
+
+  <source path="src" />
+
+  <!-- <assets path="public/assets" /> -->
+
+  <postbuild command="npm run build" unless="vite-plugin || dev" />
+  <postbuild command="npm run dev" if="dev" unless="vite-plugin" />
+</project>
