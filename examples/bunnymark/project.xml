@@ -1,14 +1,11 @@
 <project>
-  <meta title="Displaying a Bitmap" package="openfl.flight.displayingabitmap" version="1.0.0" />
+  <meta title="Bunnymark" package="openfl.flight.bunnymark" version="1.0.0" />
 
   <app main="App" path="bin" />
 
-  <include path="../../include.xml" />
+  <haxelib name="flight" path="../.." />
 
   <source path="src" />
 
-  <!-- <assets path="public/assets" /> -->
-
-  <postbuild command="npm run build" unless="vite-plugin || dev" />
-  <postbuild command="npm run dev" if="dev" unless="vite-plugin" />
+  <assets path="public/assets" />
 </project>

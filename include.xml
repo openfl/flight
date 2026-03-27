@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension>
 
+	<set name="HAXELIB_FLIGHT_PATH" value="${haxelib:flight}" />
+
 	<set name="flight" />
 	<source path="src" />
 
 	<templatePath name="templates" />
 	<haxeflag name="--macro" value="jsImport.Macro.init()" />
+	<define name="npm" if="html5" />
 
 </extension>

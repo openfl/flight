@@ -1,5 +1,5 @@
 {
-  "name": "openfl-flight-examples-displayingabitmap",
+  "name": "::APP_PACKAGE::",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -10,8 +10,13 @@
     "vite-plugin-svgr": "^2.0.0"
   },
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
+    "build:prod": "vite build",
+    "build:dev": "vite build",
+    "dev": "npm run start:dev",
+    "start": "npm run start:dev",
+    "start:prod": "vite",
+    "start:dev": "vite",
     "preview": "vite preview",
     "assets": "tsx ../../packages/upstream/scripts/download-assets.ts"
   }

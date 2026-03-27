@@ -3,12 +3,9 @@
 
   <app main="App" path="bin" />
 
-  <include path="../../include.xml" />
+  <haxelib name="flight" path="../.." />
 
   <source path="src" />
 
-  <!-- <assets path="public/assets" /> -->
-
-  <postbuild command="npm run build" unless="vite-plugin || dev" />
-  <postbuild command="npm run dev" if="dev" unless="vite-plugin" />
+  <assets path="public/assets" />
 </project>
