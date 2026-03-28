@@ -1,5 +1,6 @@
 {
   "name": "::APP_PACKAGE::",
+  "version": "::META_VERSION::",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -11,13 +12,11 @@
   },
   "scripts": {
     "build": "vite build",
-    "build:prod": "vite build",
-    "build:dev": "vite build",
-    "dev": "npm run start:dev",
-    "start": "npm run start:dev",
-    "start:prod": "vite",
-    "start:dev": "vite",
+    "dev": "vite",
     "preview": "vite preview",
-    "assets": "tsx ../../packages/upstream/scripts/download-assets.ts"
+
+    "lime:build": "npm run build",
+    "lime:run": "npm run preview",
+    "lime:test": "npm run dev"
   }
 }
