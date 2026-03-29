@@ -7,5 +7,5 @@
 
   <source path="src" />
 
-  <assets path="public/assets" />
+  <assets path="public/assets" rename="assets" />
 </project>
