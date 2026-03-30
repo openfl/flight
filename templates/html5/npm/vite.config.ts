@@ -6,7 +6,7 @@ export default defineConfig({
     alias: {
       "@flighthq/flight": path.resolve(
         __dirname,
-        "::SET_HAXELIB_FLIGHT_PATH::/packages/upstream/packages/api/flight",
+        "::LIB_FLIGHT_PATH::/packages/upstream/packages/api/flight",
       ),
     },
   },
